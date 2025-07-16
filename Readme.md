@@ -3,7 +3,7 @@
 ## Compatible Platform
 The packages are tested on Windows 11 computer and Meta Quest 2, and developed on ROS Noetic with Gazebo Classic and Unity (Editor version 6000.1.7f1).
 
-## Compatible Platform
+## Platform Setup
 1. First install the Meta Quest Link app for Meta Quest 2 and connect your Quest 2 with the Windows computer using the app.
 2. Install Unity Hub and then install the editor version 6000.1.7f1 for the VR simulation project.
 3. We will use Windows Subsystems for Linux (WSL) to run ROS and Gazebo in a Windows computer seamlessly.
