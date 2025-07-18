@@ -103,12 +103,14 @@ The packages are tested on Windows 11 computer and Meta Quest 2, and developed o
    ```sh
    sudo apt update
    sudo apt install -y bash-completion ros-noetic-rosbash
-   sudo apt install -y ros-noetic-xacro python3-xacro
+   sudo apt install -y ros-noetic-xacro
    sudo apt install -y ros-noetic-robot-state-publisher ros-noetic-image-view
    sudo apt install -y ros-noetic-joint-state-publisher
    sudo apt install -y ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
    sudo apt install ros-noetic-mavros ros-noetic-mavros-extras
    sudo apt install ros-noetic-teleop-twist-keyboard
+   sudo apt install python3-pip
+   pip3 install --user --upgrade scipy
    ```
 7. 
 
