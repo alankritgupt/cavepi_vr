@@ -83,8 +83,34 @@ The packages are tested on Windows 11 computer and Meta Quest 2, and developed o
    mkdir Downloads
    ```
 3. Copy the files from your Windows Desktop to the Downloads folder of Ubuntu in WSL.
-
-4. 
+   ```sh
+   cp /mnt/c/Users/<WindowsUser>/Desktop/src.zip ~/Downloads/
+   ```
+4. Unzip the folder and copy it to a ROS workspace (say named 'cavepi_ws').
+   ```sh
+   sudo apt install -y zip
+   sudo apt install -y unzip
+   mkdir -p ~/cavepi_ws/src
+   unzip ~/Downloads/src.zip -d ~/cavepi_ws/src
+   ```
+5. Now if you see an `src` folder inside `src` folder of `cavepi_ws`, bring that up in order.
+   ```sh
+   cd ~/cavepi_ws/src
+   mv src/* .
+   ```
+   Now, the folder should be like `cavepi_ws > src > all files`.
+6. Install the additional packages.
+   ```sh
+   sudo apt update
+   sudo apt install -y bash-completion ros-noetic-rosbash
+   sudo apt install -y ros-noetic-xacro python3-xacro
+   sudo apt install -y ros-noetic-robot-state-publisher ros-noetic-image-view
+   sudo apt install -y ros-noetic-joint-state-publisher
+   sudo apt install -y ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
+   sudo apt install ros-noetic-mavros ros-noetic-mavros-extras
+   sudo apt install ros-noetic-teleop-twist-keyboard
+   ```
+7. 
 
 1. Install the `mavros` and `teleop-twist-keyboard` packages for the respective ROS version.
     ```sh
