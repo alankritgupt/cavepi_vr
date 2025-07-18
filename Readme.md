@@ -109,24 +109,32 @@ The packages are tested on Windows 11 computer and Meta Quest 2, and developed o
    sudo apt install -y ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
    sudo apt install ros-noetic-mavros ros-noetic-mavros-extras
    sudo apt install ros-noetic-teleop-twist-keyboard
-   sudo apt install python3-pip
-   pip3 install --user --upgrade scipy
-   ```
-7. 
-
-1. Install the `mavros` and `teleop-twist-keyboard` packages for the respective ROS version.
-    ```sh
-   sudo apt install ros-noetic-mavros ros-noetic-mavros-extras
-   sudo apt install ros-noetic-teleop-twist-keyboard
    ```
    In case if you are using any other version of ROS than Noetic, please replace `noetic` with the correct version of ROS.
-2. Install the `scipy` package with version >= 1.6.
+7. Install the `scipy` package with version >= 1.6.
    ```sh
    sudo apt install python3-pip
    pip3 install --user --upgrade scipy
    ```
+8. Now built the workspace and run the launch file.
+   ```sh
+   cd ~/cavepi_ws
+   catkin_make
+   source devel/setup.bash
+   roslaunch nemogator_bringup cavepi_auv_in_a_cave.launch
+   ```
+   A Gazebo window will pop up and starting the simulation would show three windows of different views of the robot.
    
-## Usage
+## Connecting Gazebo with Unity for VR Visualisation
+1. Turn on the Meta Quest 2 and connect it with Meta Quest Link app either on WiFi or wired connection.
+2. Open the project on Unity.
+3. Start the Gazebo simulation in one Powershell window.
+4. Open other Powershell window as administrator and run the following:
+   ```sh
+   sudo apt install ros-noetic-rosbridge-server
+   roslaunch rosbridge_server rosbridge_websocket.launch
+   ```
+5. 
 
 1. Clone the repo and place the four packages inside `~/catkin_ws/src/` directory in your local computer.
 2. Download the 3D models of the CavePI links from here: [Dropbox link](https://www.dropbox.com/scl/fo/h16z4oh9wp337o5n7fm5i/AFeJVwF5MsPjYP4ErddTO0g?rlkey=9oo4m484tb7dqusxe6gjbov9v&st=hvr9hmgv&dl=0)
