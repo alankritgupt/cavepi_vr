@@ -116,7 +116,7 @@ We will use Windows Subsystems for Linux (WSL) to run ROS and Gazebo in a Window
    sudo apt install python3-pip
    pip3 install --user --upgrade scipy
    ```
-8. Now built the workspace and run the launch file.
+8. Now build the workspace and run the launch file.
    ```sh
    cd ~/cavepi_ws
    catkin_make
