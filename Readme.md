@@ -127,7 +127,7 @@ We will use Windows Subsystems for Linux (WSL) to run ROS and Gazebo in a Window
    
 ## Connecting Gazebo with Unity for VR Visualisation
 1. Turn on the Meta Quest 2 and connect it with Meta Quest Link app either on WiFi or wired connection.
-2. Open the project on Unity.
+2. Download the Unity project from [Dropbox link](https://www.dropbox.com/scl/fi/ep7kiitvje05xrhtthl2p/My-project.zip?rlkey=a7kvok0bcftymopx4gk3evaf4&st=8nhn81de&dl=0). Open the project in Unity Editor version 6000.1.7f1.
 3. Start the Gazebo simulation in one Powershell window.
 4. Open other Powershell window as administrator and run the following:
    ```sh
