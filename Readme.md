@@ -109,6 +109,7 @@ We will use Windows Subsystems for Linux (WSL) to run ROS and Gazebo in a Window
    sudo apt install -y ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
    sudo apt install ros-noetic-mavros ros-noetic-mavros-extras
    sudo apt install ros-noetic-teleop-twist-keyboard
+   sudo apt install ros-noetic-rosbridge-server
    ```
    In case if you are using any other version of ROS than Noetic, please replace `noetic` with the correct version of ROS.
 7. Install the `scipy` package with version >= 1.6.
@@ -137,13 +138,18 @@ We will use Windows Subsystems for Linux (WSL) to run ROS and Gazebo in a Window
    hostname -I
    ```
    Output will be an IP address. For example, `172.26.121.78`.
-4. 
-5. where Gazebos simulation will be launched.
-6. Download the Unity project named `My project` from [Dropbox link](https://www.dropbox.com/scl/fi/ep7kiitvje05xrhtthl2p/My-project.zip?rlkey=a7kvok0bcftymopx4gk3evaf4&st=8nhn81de&dl=0). Open the project in Unity Editor version 6000.1.7f1.
-7. Start the Gazebo simulation in one Powershell window.
-8. Open other Powershell window as administrator and run the following:
+4. Download the Unity project named `My project` from [Dropbox link](https://www.dropbox.com/scl/fi/ep7kiitvje05xrhtthl2p/My-project.zip?rlkey=a7kvok0bcftymopx4gk3evaf4&st=8nhn81de&dl=0). Open the project in Unity Editor version 6000.1.7f1.
+5. Open the `Inspector` window on the right side of the `ROS Connector` prefab/game model from the left hand side window. In the `Ros Bridge Server Url` option, put the IP address achieved above. This will create the entry in the `Ros Bridge Server Url` option like `ws://172.26.121.78:9090`.
+6. Similarly, also change the .
+7. Start the Gazebo simulation in the Powershell window.
    ```sh
-   sudo apt install ros-noetic-rosbridge-server
+   cd ~/cavepi_ws
+   catkin_make
+   source devel/setup.bash
+   roslaunch nemogator_bringup cavepi_auv_in_a_cave.launch
+   ```
+8. Now, open another Powershell window as administrator and run the following:
+   ```sh
    roslaunch rosbridge_server rosbridge_websocket.launch
    ```
-9. Put on the headset and start the simulation from Unity Editor. Have fun watching your VR simulation now!
+10. Put on the headset and start the simulation from the Unity Editor. Have fun watching your VR simulation now!
