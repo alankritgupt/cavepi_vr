@@ -98,7 +98,7 @@ We will use Windows Subsystems for Linux (WSL) to run ROS and Gazebo in a Window
    cd ~/cavepi_ws/src
    mv src/* .
    ```
-   Now, the folder should be like `cavepi_ws > src > all files`.
+   Now, the folder should be like `cavepi_ws > src >` all files.
 6. Install the additional packages.
    ```sh
    sudo apt update
