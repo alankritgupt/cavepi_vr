@@ -123,15 +123,27 @@ We will use Windows Subsystems for Linux (WSL) to run ROS and Gazebo in a Window
    source devel/setup.bash
    roslaunch nemogator_bringup cavepi_auv_in_a_cave.launch
    ```
-   A Gazebo window will pop up and starting the simulation would show three windows of different views of the robot.
+   A Gazebo window will pop up and starting the simulation would show three windows of different views of the robot. Now close the simulation for now.
    
 ## Connecting Gazebo with Unity for VR Visualisation
 1. Turn on the Meta Quest 2 and connect it with Meta Quest Link app either on WiFi or wired connection.
-2. Download the Unity project named `My project` from [Dropbox link](https://www.dropbox.com/scl/fi/ep7kiitvje05xrhtthl2p/My-project.zip?rlkey=a7kvok0bcftymopx4gk3evaf4&st=8nhn81de&dl=0). Open the project in Unity Editor version 6000.1.7f1.
-3. Start the Gazebo simulation in one Powershell window.
-4. Open other Powershell window as administrator and run the following:
+2. Open Ubuntu 20.04 inside WSL in a Powershell window.
+   ```sh
+   wsl -d Ubuntu-20.04
+   cd
+   ```
+3. Get the IP address of the WSL host machine i.e. the Windows computer.
+   ```sh
+   hostname -I
+   ```
+   Output will be an IP address. For example, `172.26.121.78`.
+4. 
+5. where Gazebos simulation will be launched.
+6. Download the Unity project named `My project` from [Dropbox link](https://www.dropbox.com/scl/fi/ep7kiitvje05xrhtthl2p/My-project.zip?rlkey=a7kvok0bcftymopx4gk3evaf4&st=8nhn81de&dl=0). Open the project in Unity Editor version 6000.1.7f1.
+7. Start the Gazebo simulation in one Powershell window.
+8. Open other Powershell window as administrator and run the following:
    ```sh
    sudo apt install ros-noetic-rosbridge-server
    roslaunch rosbridge_server rosbridge_websocket.launch
    ```
-5. Put on the headset and start the simulation from Unity Editor. Have fun watching your VR simulation now!
+9. Put on the headset and start the simulation from Unity Editor. Have fun watching your VR simulation now!
