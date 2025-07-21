@@ -139,7 +139,7 @@ We will use Windows Subsystems for Linux (WSL) to run ROS and Gazebo in a Window
    ```
    Output will be an IP address. For example, `172.26.121.78`.
 4. Download the Unity project named `My project` from [Dropbox link](https://www.dropbox.com/scl/fi/ep7kiitvje05xrhtthl2p/My-project.zip?rlkey=a7kvok0bcftymopx4gk3evaf4&st=8nhn81de&dl=0). Open the project in Unity Editor version 6000.1.7f1.
-5. Open the `Inspector` window on the right side of the `ROS Connector` prefab/game model from the left hand side window. In the `Ros Bridge Server Url` option, put the IP address achieved above. This will create the entry in the `Ros Bridge Server Url` option like `ws://172.26.121.78:9090`.
+5. In the left hand panel, select the `ROS Connector` prefab/game model, then open its `Inspector` window on the right-hand side. In the `Ros Bridge Server Url` option, put the IP address achieved above. This will create the entry in the `Ros Bridge Server Url` option like `ws://172.26.121.78:9090`.
 6. Similarly, also change the .
 7. Start the Gazebo simulation in the Powershell window.
    ```sh
