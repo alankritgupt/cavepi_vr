@@ -71,7 +71,7 @@ We will use Windows Subsystems for Linux (WSL) to run ROS and Gazebo in a Window
    echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
    source ~/.bashrc
    ```
-7. Check Gazebo.
+7. Start and check if the Gazebo window appears without any errors.
    ```sh
    gazbeo
    ```
